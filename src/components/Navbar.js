@@ -110,6 +110,33 @@ async function connectWebsite() {
                 <Link to="/profile">Profile</Link>
               </li>              
               }  
+              {location.pathname === "/propose" ? 
+              <li className='border-b-2 hover:pb-0 p-2'>
+                <Link to="/propose">Propose</Link>
+              </li>
+              :
+              <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <Link to="/propose">Propose</Link>
+              </li>              
+              }  
+              {location.pathname === "/vote" ? 
+              <li className='border-b-2 hover:pb-0 p-2'>
+                <Link to="/vote">Vote</Link>
+              </li>
+              :
+              <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <Link to="/vote">Vote</Link>
+              </li>              
+              }  
+              {location.pathname === "/execute" ? 
+              <li className='border-b-2 hover:pb-0 p-2'>
+                <Link to="/execute">Execute</Link>
+              </li>
+              :
+              <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <Link to="/execute">Execute</Link>
+              </li>              
+              }  
               <li>
                 <button className="enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
               </li>
