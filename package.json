@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "ethers": "5.7.2",
     "fs": "*",
     "path-browserify": "^1.0.1",
     "react": "^18.1.0",
@@ -43,8 +44,9 @@
     ]
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.0.6",
-    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.7",
     "buffer": "^5.7.1",
@@ -52,7 +54,6 @@
     "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.1",
     "ethereum-waffle": "^3.4.4",
-    "ethers": "^5.6.8",
     "hardhat": "^2.22.3",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",

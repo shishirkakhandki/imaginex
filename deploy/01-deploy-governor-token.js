@@ -1,12 +1,13 @@
 const { ethers } = require("hardhat");
+const {verify} =  require("../helper-functions");
 
 const deployGovernanceToken = async function (hre) {
   const { getNamedAccounts, deployments, network } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  log("----------------------------------------------------");
-  log("Deploying GovernanceToken and waiting for confirmations...");
+  console.log("----------------------------------------------------");
+  console.log("Deploying GovernanceToken and waiting for confirmations...");
 
   const governanceToken = await deploy("GovernanceToken", {
     from: deployer,
@@ -15,15 +16,15 @@ const deployGovernanceToken = async function (hre) {
     waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
   });
 
-  log(`GovernanceToken at ${governanceToken.address}`);
+  console.log(`GovernanceToken at ${governanceToken.address}`);
 
   if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
     await verify(governanceToken.address, []);
   }
 
-  log(`Delegating to ${deployer}`);
+  console.log(`Delegating to ${deployer}`);
   await delegate(governanceToken.address, deployer);
-  log("Delegated!");
+  console.log("Delegated!");
 };
 
 const delegate = async (governanceTokenAddress, delegatedAccount) => {
